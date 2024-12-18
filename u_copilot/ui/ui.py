@@ -83,44 +83,36 @@ class UCopilotUi:
         self._system_prompt = self._get_default_system_prompt(self.mode)
 
     def _chat(self, message: str, history: list[list[str]], mode: str, *_: Any) -> Any:
-        TENANT_ID = os.getenv('PORT', 50055)
+        TENANT_ID = os.getenv("PORT", 50055)
+
         def revert_path(formatted_path):
             # Replace all '__' with '/' in the formatted_path
-            if '___' in formatted_path:
-                path_marker='___'
+            if "___" in formatted_path:
+                path_marker = "___"
             else:
-                path_marker='__'
-            original_path = formatted_path.replace(path_marker, '/')
+                path_marker = "__"
+            original_path = formatted_path.replace(path_marker, "/")
+            print(f"original_path_1={original_path}")
             # Check if the path ends with 'index.html' and remove it
-            if original_path.endswith('index.html'):
+            if original_path.endswith("index.html"):
                 # Remove the last part 'index.html' by slicing
-                original_path = original_path[:-10]  # 'index.html' is 10 characters long
-            elif original_path.endswith('.html'):
+                original_path = original_path[
+                    :-10
+                ]  # 'index.html' is 10 characters long
+            elif original_path.endswith(".html"):
                 # Remove the last part 'index.html' by slicing
                 original_path = original_path[:-5]  # 'index.html' is 10 characters long
+            print(f"original_path_2={original_path}")
             return original_path
-        
-        # def convert_to_valid_url(input_url):
-        #     # Split the input URL into the base part and the file part
-        #     if '@' in input_url:
-        #         base_url, query_part = input_url.split('@', 1)
-        #         # Remove any trailing '.html' from the query part
-        #         query_part = query_part.replace('.html', '')
-        #         # Construct the new URL with the query part
-        #         new_url = f"?{query_part}"
-        #         return new_url
-        #     else:
-        #         # Return the original if no '@' is present
-        #         return input_url
-            
+
         def convert_to_valid_url(input_url):
             # Split the input URL into the base part and the file part
-            if '@' in input_url:
-                return input_url.replace('@','?')
+            if "@" in input_url:
+                return input_url.replace("@", "?")
             else:
                 # Return the original if no '@' is present
                 return input_url
-            
+
         def yield_deltas(completion_gen: CompletionGen) -> Iterable[str]:
             full_response: str = ""
             stream = completion_gen.response
@@ -131,18 +123,18 @@ class UCopilotUi:
                     full_response += delta.delta or ""
                 yield full_response
 
-            BASE_URL = os.getenv('BASE_URL', 'paly.net')
+            BASE_URL = os.getenv("BASE_URL", "paly.net")
             if completion_gen.sources:
                 full_response += SOURCES_SEPARATOR
                 cur_sources = Source.curate_sources(completion_gen.sources)
                 logger.info(f"cur_sources={cur_sources}")
-                    
+                
                 sources_text = "\n\n\n".join(
                     f"{index}. <https://{BASE_URL}/{convert_to_valid_url(revert_path(source.file))}>"
                     for index, source in enumerate(cur_sources, start=1)
-                
                 )
-                
+                print(f"sources_text={sources_text}")
+
                 full_response += sources_text
             yield full_response
 
@@ -167,14 +159,16 @@ class UCopilotUi:
             return history_messages[:20]
 
         new_message = ChatMessage(content=message, role=MessageRole.USER)
-        logger.info(f"NEW MESSAGE **** ={new_message}, type of new_message ={type(new_message)}")
+        logger.info(
+            f"NEW MESSAGE **** ={new_message}, type of new_message ={type(new_message)}"
+        )
         all_messages = [*build_history(), new_message]
         messages_json = json.dumps(all_messages, default=str)
         logger.info(f"**** all_messsages = {messages_json}")
-        #====================================================================
+        # ====================================================================
         chat_manager.create_table(TENANT_ID)
-        chat_manager.insert_or_update_message(TENANT_ID, message, messages_json) 
-        #====================================================================
+        chat_manager.insert_or_update_message(TENANT_ID, message, messages_json)
+        # ====================================================================
         # If a system prompt is set, add it as a system message
         if self._system_prompt:
             all_messages.insert(
@@ -204,14 +198,14 @@ class UCopilotUi:
                 )
 
                 sources = Source.curate_sources(response)
-                
-                BASE_URL = os.getenv('BASE_URL', 'paly.net')
+                print(f"souerces={sources}")
+
+                BASE_URL = os.getenv("BASE_URL", "paly.net")
                 yield "\n\n\n".join(
                     f"{index}. <https://{BASE_URL}/{revert_path(source.file)}>\n"
                     f"{source.text}"
                     for index, source in enumerate(sources, start=1)
                 )
-                
 
     # On initialization and on mode change, this function set the system prompt
     # to the default prompt based on the mode (and user settings).
@@ -243,15 +237,15 @@ class UCopilotUi:
         # Update placeholder and disable interaction if no default system prompt is set
         else:
             return gr.update(placeholder=self._system_prompt, interactive=False)
-    
+
     def _list_ingested_files(self) -> list[list[str]]:
-        TENANT_ID = os.getenv('PORT', 50055)
+        TENANT_ID = os.getenv("PORT", 50055)
         messages = chat_manager.retrieve_messages(TENANT_ID)
-        faq_list=[]
+        faq_list = []
         for message in messages:
             print(f"ID: {message[0]}, Text: {message[1]}, Timestamp: {message[2]}")
             faq_list.append([message[1]])
-            
+
         return faq_list
 
     def _upload_file(self, files: list[str]) -> None:
@@ -296,13 +290,13 @@ class UCopilotUi:
                         interactive=False,
                         render=False,  # Rendered under the button
                     )
-                    
+
                     ingested_dataset.change(
                         self._list_ingested_files,
                         outputs=ingested_dataset,
                     )
                     ingested_dataset.render()
-                    
+
                     system_prompt_input = gr.Textbox(
                         placeholder=self._system_prompt,
                         label="System Prompt",
@@ -321,7 +315,7 @@ class UCopilotUi:
                     )
 
                 with gr.Column(scale=7, elem_id="col"):
-                    SCHOOL_NAME=os.getenv('SCHOOL_NAME', 'Palo Alto High School')
+                    SCHOOL_NAME = os.getenv("SCHOOL_NAME", "Palo Alto High School")
                     _ = gr.ChatInterface(
                         self._chat,
                         chatbot=gr.Chatbot(
@@ -336,7 +330,6 @@ class UCopilotUi:
                         ),
                         # additional_inputs=[mode, upload_button, system_prompt_input],
                         additional_inputs=[mode, system_prompt_input],
-                        
                     )
         return blocks
 
