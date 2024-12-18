@@ -1,3 +1,15 @@
+install psql:
+
+brew install postgresql
+postgres --version
+
+start:
+brew services start postgresql
+
+stop:
+brew services stop postgresql
+
+
 % pyenv global 3.11.8 <br>
 % git clone <repo_project> <br> 
 % cd <project> <br>

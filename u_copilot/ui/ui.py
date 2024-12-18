@@ -1,5 +1,6 @@
 """This file should be imported only and only if you want to run the UI locally."""
 import os
+import sys
 
 import itertools
 import logging
@@ -128,7 +129,7 @@ class UCopilotUi:
                 full_response += SOURCES_SEPARATOR
                 cur_sources = Source.curate_sources(completion_gen.sources)
                 logger.info(f"cur_sources={cur_sources}")
-                
+
                 sources_text = "\n\n\n".join(
                     f"{index}. <https://{BASE_URL}/{convert_to_valid_url(revert_path(source.file))}>"
                     for index, source in enumerate(cur_sources, start=1)
@@ -240,7 +241,16 @@ class UCopilotUi:
 
     def _list_ingested_files(self) -> list[list[str]]:
         TENANT_ID = os.getenv("PORT", 50055)
-        messages = chat_manager.retrieve_messages(TENANT_ID)
+        try:
+            # Attempt to retrieve messages from the database
+            messages = chat_manager.retrieve_messages(TENANT_ID)
+        except Exception as e:
+            # Handle the case where the database connection fails
+            print(
+                f"Error: Unable to connect to the PostgreSQL database. \n Plesae make sure your psql service is started:\n\nbrew services start postgresql\n\n"
+            )
+            sys.exit(1)
+
         faq_list = []
         for message in messages:
             print(f"ID: {message[0]}, Text: {message[1]}, Timestamp: {message[2]}")
