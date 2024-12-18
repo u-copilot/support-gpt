@@ -1,7 +1,6 @@
 # # start a fastapi server with uvicorn
 
 
-
 import uvicorn
 from u_copilot.main import app
 from u_copilot.settings.settings import settings
@@ -12,6 +11,6 @@ uvicorn.run(
     host="0.0.0.0",
     port=settings().server.port,
     log_config=None,
-    ssl_keyfile= "/Users/owner/Projects/u-GPT/privkey.pem",  # Add the path to your SSL key file
-    ssl_certfile="/Users/owner/Projects/u-GPT/fullchain.pem"  # Add the path to your SSL certificate file
+    ssl_keyfile="/Users/owner/Projects/u-GPT/privkey.pem",  # Add the path to your SSL key file
+    ssl_certfile="/Users/owner/Projects/u-GPT/fullchain.pem",  # Add the path to your SSL certificate file
 )
