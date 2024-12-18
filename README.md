@@ -1,25 +1,25 @@
-install psql:
+#install psql:
 
 brew install postgresql
 postgres --version
 
-start:
+#start postgresql:
 brew services start postgresql
 
-stop:
+#stop postgresql:
 brew services stop postgresql
 
 
-% pyenv global 3.11.8 <br>
-% git clone <repo_project> <br> 
-% cd <project> <br>
-% python -m venv venv_gpt <br>
-% source venv_gpt/bin/activate <br>
-(venv_gpt)% pip install -r requirements.txt -e . <br>
-(venv_gpt)% export BASE_URL='cellolighting.com' <br>
-(venv_gpt)% export PORT=50100 <br>
-(venv_gpt)% export SCHOOL_NAME='Cello Lighting' <br>
-(venv_gpt)% poetry run python scripts/setup <br>
-(venv_gpt)% poetry run python -m u-copilot  <br>
+pyenv global 3.11.8 <br>
+git clone <repo_project> <br> 
+cd <project> <br>
+python -m venv venv_gpt <br>
+source venv_gpt/bin/activate <br>
+pip install -r requirements.txt -e . <br>
+export BASE_URL='cellolighting.com' <br>
+export PORT=50100 <br>
+export SCHOOL_NAME='Cello Lighting' <br>
+poetry run python scripts/setup <br>
+poetry run python -m u-copilot  <br>
 
 
