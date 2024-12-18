@@ -7,8 +7,8 @@ cp -R ../50000_sample/scripts .
 cp ../50000_sample/settings* .
 cp ../50000_sample/pyproject.toml .
 cp ../50000_sample/Makefile .
-../tools/init_web_d4.sh $BASE_URL $PORT
-poetry install --with ui,local
-poetry run python scripts/setup
+./tools/init_web_d4.sh $BASE_URL $PORT
+python ./tools/cleansing_data.py
+python scripts/setup
 PGPT_PROFILES=local make ingest cleansed_website
-PGPT_PROFILES=local make run
+python u_copilot
