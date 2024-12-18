@@ -1,0 +1,38 @@
+.venv
+.env
+venv
+
+local_data/
+cleansed_website/
+website/
+
+settings-me.yaml
+
+.ruff_cache
+.pytest_cache
+.mypy_cache
+
+# byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*/__pycache__/
+*/*/__pycache__/
+
+# unit tests / coverage reports
+/tests-results.xml
+/.coverage
+/coverage.xml
+/htmlcov/
+
+# pyenv
+/.python-version
+
+# IDE
+.idea/
+.vscode/
+/.run/
+.fleet/
+
+# macOS
+.DS_Store
+*/.DS_Store
