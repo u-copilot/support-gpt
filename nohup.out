@@ -1,0 +1,523 @@
+17:01:57.122 [INFO    ] u_copilot.settings.settings_loader - Starting application with profiles=['default']
+17:01:59.763 [INFO    ] u_copilot.components.llm.llm_component - Initializing the LLM in mode=local
+llama_model_loader: loaded meta data with 24 key-value pairs and 291 tensors from ../models/mistral-7b-instruct-v0.2.Q4_K_M.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.name str              = mistralai_mistral-7b-instruct-v0.2
+llama_model_loader: - kv   2:                       llama.context_length u32              = 32768
+llama_model_loader: - kv   3:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv   4:                          llama.block_count u32              = 32
+llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv   6:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv   7:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv   8:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                       llama.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv  11:                          general.file_type u32              = 15
+llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,32000]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 2
+llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% for message in mess...
+llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   65 tensors
+llama_model_loader: - type q4_K:  193 tensors
+llama_model_loader: - type q6_K:   33 tensors
+llm_load_vocab: special tokens cache size = 3
+llm_load_vocab: token to piece cache size = 0.1637 MB
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = llama
+llm_load_print_meta: vocab type       = SPM
+llm_load_print_meta: n_vocab          = 32000
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: vocab_only       = 0
+llm_load_print_meta: n_ctx_train      = 32768
+llm_load_print_meta: n_embd           = 4096
+llm_load_print_meta: n_layer          = 32
+llm_load_print_meta: n_head           = 32
+llm_load_print_meta: n_head_kv        = 8
+llm_load_print_meta: n_rot            = 128
+llm_load_print_meta: n_swa            = 0
+llm_load_print_meta: n_embd_head_k    = 128
+llm_load_print_meta: n_embd_head_v    = 128
+llm_load_print_meta: n_gqa            = 4
+llm_load_print_meta: n_embd_k_gqa     = 1024
+llm_load_print_meta: n_embd_v_gqa     = 1024
+llm_load_print_meta: f_norm_eps       = 0.0e+00
+llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 14336
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 0
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 1000000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_ctx_orig_yarn  = 32768
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: ssm_dt_b_c_rms   = 0
+llm_load_print_meta: model type       = 7B
+llm_load_print_meta: model ftype      = Q4_K - Medium
+llm_load_print_meta: model params     = 7.24 B
+llm_load_print_meta: model size       = 4.07 GiB (4.83 BPW) 
+llm_load_print_meta: general.name     = mistralai_mistral-7b-instruct-v0.2
+llm_load_print_meta: BOS token        = 1 '<s>'
+llm_load_print_meta: EOS token        = 2 '</s>'
+llm_load_print_meta: UNK token        = 0 '<unk>'
+llm_load_print_meta: PAD token        = 0 '<unk>'
+llm_load_print_meta: LF token         = 13 '<0x0A>'
+llm_load_print_meta: max token length = 48
+llm_load_tensors: ggml ctx size =    0.27 MiB
+ggml_backend_metal_log_allocated_size: allocated buffer, size =  4095.08 MiB, ( 4095.14 / 21845.34)
+llm_load_tensors: offloading 32 repeating layers to GPU
+llm_load_tensors: offloading non-repeating layers to GPU
+llm_load_tensors: offloaded 33/33 layers to GPU
+llm_load_tensors:        CPU buffer size =    70.31 MiB
+llm_load_tensors:      Metal buffer size =  4095.07 MiB
+.................................................................................................
+llama_new_context_with_model: n_ctx      = 3904
+llama_new_context_with_model: n_batch    = 512
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 1000000.0
+llama_new_context_with_model: freq_scale = 1
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1 Pro
+ggml_metal_init: picking default device: Apple M1 Pro
+ggml_metal_init: using embedded metal library
+ggml_metal_init: GPU name:   Apple M1 Pro
+ggml_metal_init: GPU family: MTLGPUFamilyApple7  (1007)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: simdgroup reduction support   = true
+ggml_metal_init: simdgroup matrix mul. support = true
+ggml_metal_init: hasUnifiedMemory              = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 22906.50 MB
+llama_kv_cache_init:      Metal KV buffer size =   488.00 MiB
+llama_new_context_with_model: KV self size  =  488.00 MiB, K (f16):  244.00 MiB, V (f16):  244.00 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.12 MiB
+llama_new_context_with_model:      Metal compute buffer size =   283.63 MiB
+llama_new_context_with_model:        CPU compute buffer size =    15.63 MiB
+llama_new_context_with_model: graph nodes  = 1030
+llama_new_context_with_model: graph splits = 2
+AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 0 | NEON = 1 | SVE = 0 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 1 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+Model metadata: {'general.quantization_version': '2', 'tokenizer.chat_template': "{{ bos_token }}{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if message['role'] == 'user' %}{{ '[INST] ' + message['content'] + ' [/INST]' }}{% elif message['role'] == 'assistant' %}{{ message['content'] + eos_token}}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}", 'tokenizer.ggml.add_eos_token': 'false', 'tokenizer.ggml.add_bos_token': 'true', 'tokenizer.ggml.padding_token_id': '0', 'tokenizer.ggml.unknown_token_id': '0', 'tokenizer.ggml.eos_token_id': '2', 'tokenizer.ggml.bos_token_id': '1', 'tokenizer.ggml.model': 'llama', 'llama.attention.head_count_kv': '8', 'llama.context_length': '32768', 'llama.attention.head_count': '32', 'llama.rope.freq_base': '1000000.000000', 'llama.rope.dimension_count': '128', 'general.file_type': '15', 'llama.feed_forward_length': '14336', 'llama.embedding_length': '4096', 'llama.block_count': '32', 'general.architecture': 'llama', 'llama.attention.layer_norm_rms_epsilon': '0.000010', 'general.name': 'mistralai_mistral-7b-instruct-v0.2'}
+Available chat formats from metadata: chat_template.default
+Guessed chat format: mistral-instruct
+17:02:00.413 [INFO    ] u_copilot.components.embedding.embedding_component - Initializing the embedding model in mode=local
+17:02:01.719 [INFO    ] llama_index.indices.loading - Loading all indices.
+17:02:01.830 [INFO    ]           u_copilot.ui.ui - Mounting the gradio UI, at path=/
+17:02:01.859 [INFO    ]             uvicorn.error - Started server process [76289]
+17:02:01.859 [INFO    ]             uvicorn.error - Waiting for application startup.
+17:02:01.859 [INFO    ]             uvicorn.error - Application startup complete.
+17:02:01.859 [INFO    ]             uvicorn.error - Uvicorn running on https://0.0.0.0:50100 (Press CTRL+C to quit)
+17:02:08.076 [INFO    ]            uvicorn.access - 50.255.22.82:57005 - "GET / HTTP/1.1" 200
+17:02:08.155 [INFO    ]            uvicorn.access - 50.255.22.82:57005 - "GET /info HTTP/1.1" 200
+17:02:08.185 [INFO    ]            uvicorn.access - 50.255.22.82:57005 - "GET /theme.css HTTP/1.1" 200
+17:02:08.297 [INFO    ]            uvicorn.access - 50.255.22.82:57005 - "POST /run/predict HTTP/1.1" 200
+18:49:17.612 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET / HTTP/1.1" 200
+18:49:17.631 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET /assets/index-2e3ef8b2.js HTTP/1.1" 200
+18:49:17.634 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/index-8d4a258a.css HTTP/1.1" 200
+18:49:17.641 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/svelte/svelte.js HTTP/1.1" 200
+18:49:17.654 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/Index-a927ce67.js HTTP/1.1" 200
+18:49:17.655 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET /assets/Index-882fff57.css HTTP/1.1" 200
+18:49:17.669 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /info HTTP/1.1" 200
+18:49:17.683 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /theme.css HTTP/1.1" 200
+18:49:17.688 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET /assets/Blocks-7026e92e.js HTTP/1.1" 200
+18:49:17.689 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/Blocks-4a034b77.css HTTP/1.1" 200
+18:49:17.690 [INFO    ]            uvicorn.access - 127.0.0.1:58445 - "GET /assets/Button-2a9911a9.css HTTP/1.1" 200
+18:49:17.690 [INFO    ]            uvicorn.access - 127.0.0.1:58447 - "GET /assets/Button-816a5c8f.js HTTP/1.1" 200
+18:49:17.702 [INFO    ]            uvicorn.access - 127.0.0.1:58447 - "GET /assets/Index-815f98ca.css HTTP/1.1" 200
+18:49:17.702 [INFO    ]            uvicorn.access - 127.0.0.1:58445 - "GET /assets/Index-404650cc.js HTTP/1.1" 200
+18:49:17.703 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET /assets/Index-7cbc3ec9.js HTTP/1.1" 200
+18:49:17.703 [INFO    ]            uvicorn.access - 127.0.0.1:58449 - "GET /assets/Index-24a33ce1.js HTTP/1.1" 200
+18:49:17.703 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/Index-5538a1d8.css HTTP/1.1" 200
+18:49:17.709 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET /assets/Example-168de94c.css HTTP/1.1" 200
+18:49:17.709 [INFO    ]            uvicorn.access - 127.0.0.1:58449 - "GET /assets/ModifyUpload-7d41bdb3.css HTTP/1.1" 200
+18:49:17.709 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/Index-11e1685d.css HTTP/1.1" 200
+18:49:17.710 [INFO    ]            uvicorn.access - 127.0.0.1:58445 - "GET /assets/Index-6e9da292.css HTTP/1.1" 200
+18:49:17.711 [INFO    ]            uvicorn.access - 127.0.0.1:58447 - "GET /assets/Example-aca1592e.css HTTP/1.1" 200
+18:49:17.714 [INFO    ]            uvicorn.access - 127.0.0.1:58447 - "GET /assets/Index-2abed479.css HTTP/1.1" 200
+18:49:17.714 [INFO    ]            uvicorn.access - 127.0.0.1:58445 - "GET /assets/Textbox-4c6022f4.css HTTP/1.1" 200
+18:49:17.715 [INFO    ]            uvicorn.access - 127.0.0.1:58449 - "GET /assets/Example-e8628e88.css HTTP/1.1" 200
+18:49:17.715 [INFO    ]            uvicorn.access - 127.0.0.1:58470 - "GET /assets/Index-7ab72019.css HTTP/1.1" 200
+18:49:17.715 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET /assets/Example-55d94c71.css HTTP/1.1" 200
+18:49:17.715 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/Index-a90cda25.css HTTP/1.1" 200
+18:49:17.717 [INFO    ]            uvicorn.access - 127.0.0.1:58447 - "GET /assets/Image-7b829b60.css HTTP/1.1" 200
+18:49:17.718 [INFO    ]            uvicorn.access - 127.0.0.1:58445 - "GET /assets/Video-540eb7aa.css HTTP/1.1" 200
+18:49:17.718 [INFO    ]            uvicorn.access - 127.0.0.1:58449 - "GET /assets/Index-7ea7c4ca.css HTTP/1.1" 200
+18:49:17.719 [INFO    ]            uvicorn.access - 127.0.0.1:58470 - "GET /assets/Index-a9a298fa.js HTTP/1.1" 200
+18:49:17.719 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/Index-f43ff834.css HTTP/1.1" 200
+18:49:17.719 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET /assets/Index-e45a2b11.css HTTP/1.1" 200
+18:49:17.721 [INFO    ]            uvicorn.access - 127.0.0.1:58445 - "GET /assets/BlockTitle-76077052.js HTTP/1.1" 200
+18:49:17.721 [INFO    ]            uvicorn.access - 127.0.0.1:58447 - "GET /assets/Info-914ec0e6.js HTTP/1.1" 200
+18:49:17.721 [INFO    ]            uvicorn.access - 127.0.0.1:58449 - "GET /assets/Example-b79eee1b.js HTTP/1.1" 200
+18:49:17.722 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET /assets/Index-7633de45.js HTTP/1.1" 200
+18:49:17.722 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/index-21d69e4c.js HTTP/1.1" 200
+18:49:17.723 [INFO    ]            uvicorn.access - 127.0.0.1:58470 - "GET /assets/utils-013c0d40.js HTTP/1.1" 200
+18:49:17.725 [INFO    ]            uvicorn.access - 127.0.0.1:58447 - "GET /assets/Index.svelte_svelte_type_style_lang-bffb318d.js HTTP/1.1" 200
+18:49:17.725 [INFO    ]            uvicorn.access - 127.0.0.1:58445 - "GET /assets/ModifyUpload.svelte_svelte_type_style_lang-f4299494.js HTTP/1.1" 200
+18:49:17.725 [INFO    ]            uvicorn.access - 127.0.0.1:58449 - "GET /assets/Example.svelte_svelte_type_style_lang-0d960532.js HTTP/1.1" 200
+18:49:17.727 [INFO    ]            uvicorn.access - 127.0.0.1:58470 - "GET /assets/prism-python-e02ab82a.js HTTP/1.1" 200
+18:49:17.727 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/dsv-a37bb3db.js HTTP/1.1" 200
+18:49:17.727 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET /assets/Example-7d6bb9b6.js HTTP/1.1" 200
+18:49:17.729 [INFO    ]            uvicorn.access - 127.0.0.1:58447 - "GET /assets/Index-0d7ad3de.js HTTP/1.1" 200
+18:49:17.729 [INFO    ]            uvicorn.access - 127.0.0.1:58445 - "GET /assets/Index-cbf1aa1d.js HTTP/1.1" 200
+18:49:17.730 [INFO    ]            uvicorn.access - 127.0.0.1:58470 - "GET /assets/ShareButton-056bb30d.js HTTP/1.1" 200
+18:49:17.730 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET /assets/file-url-3e95666f.js HTTP/1.1" 200
+18:49:17.730 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/IconButton-387c96f6.js HTTP/1.1" 200
+18:49:17.733 [INFO    ]            uvicorn.access - 127.0.0.1:58447 - "GET /assets/Image-4d34d604.js HTTP/1.1" 200
+18:49:17.734 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET /assets/BlockLabel-f1b72dca.js HTTP/1.1" 200
+18:49:17.734 [INFO    ]            uvicorn.access - 127.0.0.1:58470 - "GET /assets/Copy-a69620a8.js HTTP/1.1" 200
+18:49:17.734 [INFO    ]            uvicorn.access - 127.0.0.1:58445 - "GET /assets/Video-d99e1661.js HTTP/1.1" 200
+18:49:17.735 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/Check-f7edb5d9.js HTTP/1.1" 200
+18:49:17.736 [INFO    ]            uvicorn.access - 127.0.0.1:58447 - "GET /assets/Index-4c364175.js HTTP/1.1" 200
+18:49:17.738 [INFO    ]            uvicorn.access - 127.0.0.1:58449 - "GET /assets/Index-a3ffbeb0.js HTTP/1.1" 200
+18:49:17.739 [INFO    ]            uvicorn.access - 127.0.0.1:58445 - "GET /assets/Textbox-a79ff3fa.js HTTP/1.1" 200
+18:49:17.739 [INFO    ]            uvicorn.access - 127.0.0.1:58470 - "GET /assets/Index-362bc944.js HTTP/1.1" 200
+18:49:17.739 [INFO    ]            uvicorn.access - 127.0.0.1:58436 - "GET /assets/Index-756928a1.js HTTP/1.1" 200
+18:49:17.739 [INFO    ]            uvicorn.access - 127.0.0.1:58432 - "GET /assets/Example-e0df15d4.js HTTP/1.1" 200
+18:49:17.741 [INFO    ]            uvicorn.access - 127.0.0.1:58447 - "GET /assets/Index-b2efa79d.js HTTP/1.1" 200
+18:49:17.742 [INFO    ]            uvicorn.access - 127.0.0.1:58445 - "GET /assets/api-logo-5346f193.svg HTTP/1.1" 200
+18:49:17.742 [INFO    ]            uvicorn.access - 127.0.0.1:58449 - "GET /assets/logo-3707f936.svg HTTP/1.1" 200
+18:49:17.835 [INFO    ]            uvicorn.access - 127.0.0.1:58449 - "POST /run/predict HTTP/1.1" 200
+18:49:49.922 [INFO    ]            uvicorn.access - 127.0.0.1:58485 - "POST /run/predict HTTP/1.1" 200
+18:49:49.924 [INFO    ]            uvicorn.access - 127.0.0.1:58486 - "POST /run/predict HTTP/1.1" 200
+18:49:49.931 [INFO    ]            uvicorn.access - 127.0.0.1:58486 - "POST /run/predict HTTP/1.1" 200
+18:49:49.935 [INFO    ]            uvicorn.access - 127.0.0.1:58486 - "POST /queue/join HTTP/1.1" 200
+18:49:49.940 [INFO    ]            uvicorn.access - 127.0.0.1:58486 - "GET /queue/data?session_hash=2ahh9ivtf8r HTTP/1.1" 200
+18:49:49.982 [INFO    ]           u_copilot.ui.ui - NEW MESSAGE **** =user: how to construct a lighting system for a classroom of 1000 sqft, type of new_message =<class 'llama_index.llms.base.ChatMessage'>
+18:49:49.982 [INFO    ]           u_copilot.ui.ui - **** all_messsages = ["user: how to construct a lighting system for a classroom of 1000 sqft"]
+18:49:50.652 [WARNING ]               py.warnings - /Volumes/T7 Shield/Projects/u-GPT/u-copilot-Github-projects/clone7/venv_007/lib/python3.11/site-packages/llama_cpp/llama.py:1138: RuntimeWarning: Detected duplicate leading "<s>" in prompt, this will likely reduce response quality, consider removing it...
+  warnings.warn(
+
+18:50:11.868 [INFO    ]            uvicorn.access - 127.0.0.1:58496 - "GET /file%3D/private/var/folders/2k/_5c7jpx91754dp446_6nd9gr0000gn/T/gradio/533bd8ba49221de137dda94fdfeed4bebe7a7878/avatar-bot.ico HTTP/1.1" 200
+
+llama_print_timings:        load time =   20997.95 ms
+llama_print_timings:      sample time =       3.72 ms /   131 runs   (    0.03 ms per token, 35234.00 tokens per second)
+llama_print_timings: prompt eval time =   20988.78 ms /   427 tokens (   49.15 ms per token,    20.34 tokens per second)
+llama_print_timings:        eval time =    5416.37 ms /   130 runs   (   41.66 ms per token,    24.00 tokens per second)
+llama_print_timings:       total time =   34120.59 ms /   557 tokens
+18:50:24.817 [INFO    ]           u_copilot.ui.ui - cur_sources={Source(file='s___Cello-cut-sheet-Downlight-5s3p.pdf', page='4', text='Dimension:\n8.98\'\'\n9.29\'\'Architectural LED Retrofit  DownlightThe 8inch  Commercial Downlight LED are suitable for 100~277 VAC Input with fired-rated  \nJunction box, which delivers high lumens of exceptional 80+ CRI, Lifetime > 50000H with \n3000K, 4000K, 5000K ES color temperatures options .  They can replace for most manufacturers \nincandescent, CFL or H.I.D.  fixtures with apertures of 7.72″min .to 8.26" max diameter, Easy \nconversion  \nmethod and installation can be performed from below the ceiling without removing \nexisting  fixture.      \n'), Source(file='index.html', page='-', text='No matter huge arena or sky facilities of harsh environments.  We always do more than your expect.\n More info\nLighting GPT\nLighting GPT: powered by U-Copilot.com, Cello Lighting GPT helps you to discover insights buried in PDF, HTML and beyond.  And help you build your lighting projects.\n More info\nCello Lighting GPT is powered by U-Copilot\nU-COPILOT\nU-CopilotU-Copilot turns your website into a GPT in one day—no integration needed.  This fully automated AI unlocks insights buried in PDFs, HTML, and beyond, delivering fast, precise answers for your clients.\n')}
+18:50:24.841 [INFO    ]            uvicorn.access - 127.0.0.1:58486 - "POST /run/predict HTTP/1.1" 200
+18:51:38.050 [INFO    ]            uvicorn.access - 127.0.0.1:58522 - "POST /run/predict HTTP/1.1" 200
+18:51:38.051 [INFO    ]            uvicorn.access - 127.0.0.1:58524 - "POST /run/predict HTTP/1.1" 200
+18:51:38.057 [INFO    ]            uvicorn.access - 127.0.0.1:58524 - "POST /run/predict HTTP/1.1" 200
+18:51:38.061 [INFO    ]            uvicorn.access - 127.0.0.1:58524 - "POST /queue/join HTTP/1.1" 200
+18:51:38.064 [INFO    ]            uvicorn.access - 127.0.0.1:58524 - "GET /queue/data?session_hash=2ahh9ivtf8r HTTP/1.1" 200
+18:51:38.083 [INFO    ]           u_copilot.ui.ui - NEW MESSAGE **** =user: ok, tell me how many downlights are needed to illuminate a room of 1000 sqft with 8 ft tall to get 500 lux in all corners, type of new_message =<class 'llama_index.llms.base.ChatMessage'>
+18:51:38.083 [INFO    ]           u_copilot.ui.ui - **** all_messsages = ["user: how to construct a lighting system for a classroom of 1000 sqft", "assistant:  Based on the context provided, it does not contain sufficient information to help construct a lighting system for a 1000 sqft classroom. The context focuses on the specifications of an 8.98'' Commercial Downlight LED and U-Copilot's capabilities in helping build lighting projects. To design a lighting system for a classroom, you would need to consider factors such as the number and placement of fixtures, the type and number of lumens required, and the desired color temperature, among other things. It's recommended to consult with a lighting designer or professional for a proper design tailored to your specific needs.", "user: ok, tell me how many downlights are needed to illuminate a room of 1000 sqft with 8 ft tall to get 500 lux in all corners"]
+Llama.generate: 14 prefix-match hit, remaining 790 prompt tokens to eval
+
+llama_print_timings:        load time =   20997.95 ms
+llama_print_timings:      sample time =       9.32 ms /   325 runs   (    0.03 ms per token, 34882.47 tokens per second)
+llama_print_timings: prompt eval time =    3821.34 ms /   790 tokens (    4.84 ms per token,   206.73 tokens per second)
+llama_print_timings:        eval time =   14605.78 ms /   324 runs   (   45.08 ms per token,    22.18 tokens per second)
+llama_print_timings:       total time =   40742.26 ms /  1114 tokens
+_injector=<injector.Injector object at 0x128234bd0>
+ID: 153, Text: give me specs Vapor tight P9A e298, Timestamp: 2024-12-18 06:11:45.461544
+ID: 153, Text: give me specs Vapor tight P9A e298, Timestamp: 2024-12-18 06:11:45.461544
+ID: 153, Text: give me specs Vapor tight P9A e298, Timestamp: 2024-12-18 06:11:45.461544
+** Prompt: **
+<s>[INST] Context information is below.
+--------------------
+No matter huge arena or sky facilities of harsh environments.  We always do more than your expect.
+ More info
+Lighting GPT
+Lighting GPT: powered by U-Copilot.com, Cello Lighting GPT helps you to discover insights buried in PDF, HTML and beyond.  And help you build your lighting projects.
+ More info
+Cello Lighting GPT is powered by U-Copilot
+U-COPILOT
+U-CopilotU-Copilot turns your website into a GPT in one day—no integration needed.  This fully automated AI unlocks insights buried in PDFs, HTML, and beyond, delivering fast, precise answers for your clients.
+
+Dimension:
+8.98''
+9.29''Architectural LED Retrofit  DownlightThe 8inch  Commercial Downlight LED are suitable for 100~277 VAC Input with fired-rated  
+Junction box, which delivers high lumens of exceptional 80+ CRI, Lifetime > 50000H with 
+3000K, 4000K, 5000K ES color temperatures options .  They can replace for most manufacturers 
+incandescent, CFL or H.I.D.  fixtures with apertures of 7.72″min .to 8.26" max diameter, Easy 
+conversion  
+method and installation can be performed from below the ceiling without removing 
+existing  fixture.
+--------------------
+You can only answer questions about the provided context.  If you know the answer but it is not based in the provided context, don't provide  the answer, just state the answer is not in the context provided. [/INST]</s>[INST] how to construct a lighting system for a classroom of 1000 sqft [/INST]
+**************************************************
+** Completion: **
+ Based on the context provided, it does not contain sufficient information to help construct a lighting system for a 1000 sqft classroom. The context focuses on the specifications of an 8.98'' Commercial Downlight LED and U-Copilot's capabilities in helping build lighting projects. To design a lighting system for a classroom, you would need to consider factors such as the number and placement of fixtures, the type and number of lumens required, and the desired color temperature, among other things. It's recommended to consult with a lighting designer or professional for a proper design tailored to your specific needs.
+**************************************************
+
+
+** Messages: **
+system: Context information is below.
+--------------------
+No matter huge arena or sky facilities of harsh environments.  We always do more than your expect.
+ More info
+Lighting GPT
+Lighting GPT: powered by U-Copilot.com, Cello Lighting GPT helps you to discover insights buried in PDF, HTML and beyond.  And help you build your lighting projects.
+ More info
+Cello Lighting GPT is powered by U-Copilot
+U-COPILOT
+U-CopilotU-Copilot turns your website into a GPT in one day—no integration needed.  This fully automated AI unlocks insights buried in PDFs, HTML, and beyond, delivering fast, precise answers for your clients.
+
+Dimension:
+8.98''
+9.29''Architectural LED Retrofit  DownlightThe 8inch  Commercial Downlight LED are suitable for 100~277 VAC Input with fired-rated  
+Junction box, which delivers high lumens of exceptional 80+ CRI, Lifetime > 50000H with 
+3000K, 4000K, 5000K ES color temperatures options .  They can replace for most manufacturers 
+incandescent, CFL or H.I.D.  fixtures with apertures of 7.72″min .to 8.26" max diameter, Easy 
+conversion  
+method and installation can be performed from below the ceiling without removing 
+existing  fixture.
+--------------------
+You can only answer questions about the provided context.  If you know the answer but it is not based in the provided context, don't provide  the answer, just state the answer is not in the context provided.
+user: how to construct a lighting system for a classroom of 1000 sqft
+**************************************************
+** Response: **
+assistant:  Based on the context provided, it does not contain sufficient information to help construct a lighting system for a 1000 sqft classroom. The context focuses on the specifications of an 8.98'' Commercial Downlight LED and U-Copilot's capabilities in helping build lighting projects. To design a lighting system for a classroom, you would need to consider factors such as the number and placement of fixtures, the type and number of lumens required, and the desired color temperature, among other things. It's recommended to consult with a lighting designer or professional for a proper design tailored to your specific needs.
+**************************************************
+
+
+original_path_1=s/Cello-cut-sheet-Downlight-5s3p.pdf
+original_path_2=s/Cello-cut-sheet-Downlight-5s3p.pdf
+original_path_1=index.html
+original_path_2=
+sources_text=1. <https://www.cellolighting.com/s/Cello-cut-sheet-Downlight-5s3p.pdf>
+
+
+2. <https://www.cellolighting.com/>
+** Prompt: **
+<s>[INST] Context information is below.
+--------------------
+DESCRIPTION 
+Dimension:
+ORDER INFORMATIONPERFORMANCE SUMMARY LED Commercial Downlights
+  DL-DL028=8inch 15W=15W  35=3500K
+40=4000K
+50=5000KCategory Size Wattage CCT(XX)
+30=3000KEnergy Star Listed YES
+Damp Rated YESLM79 Report YESEfficacy
+Rated Power
+Delivered light output
+Input Current
+Input Voltage
+CRI
+CCT Options
+THD
+PF
+Standard Warranty
+Standard Lifetime
+Mounting
+Temperature Rating  80LPW
+9W
+720lm 
+0.1A
+ Model
+100-277V AC
+Ra>80
+3000K, 3500K, 4000K, 5000K
+<20%
+>0.9
+5 Years
+Designed minimum 50,000 hours
+Recessed
+Designed to operate in temperatures 45°C
+and below room side and plenum side.   85LPW
+15W
+1275lm
+0.2A88LPW
+20W
+1760lm
+0.25A
+UL Listed YES YES /
+9W=9W  
+20W=20W  6.02"
+9.21''
+The split LED Commercial Downlight series have been optimized to the third generation.  The 
+innovative separable design of junction box and housing makes it more flexible, With 75 º  beam 
+angle , the 8" split commercial downlight can fulfill a wide range of lighting needs .  Easy-fit
+ installation comes from adjustable spring-action housing clips.  It is designed and engineered for  
+recessed applications, which is suitable for commercial and public places and elegantly decorates 
+the ambience, such as shopping mall, hospital, airport, hotel lobby, etc.
+
+Dimension:
+8.98''
+9.29''Architectural LED Retrofit  DownlightThe 8inch  Commercial Downlight LED are suitable for 100~277 VAC Input with fired-rated  
+Junction box, which delivers high lumens of exceptional 80+ CRI, Lifetime > 50000H with 
+3000K, 4000K, 5000K ES color temperatures options .  They can replace for most manufacturers 
+incandescent, CFL or H.I.D.  fixtures with apertures of 7.72″min .to 8.26" max diameter, Easy 
+conversion  
+method and installation can be performed from below the ceiling without removing 
+existing  fixture.
+--------------------
+You can only answer questions about the provided context.  If you know the answer but it is not based in the provided context, don't provide  the answer, just state the answer is not in the context provided. [/INST]</s>[INST] how to construct a lighting system for a classroom of 1000 sqft [/INST]</s>[INST] ok, tell me how many downlights are needed to illuminate a room of 1000 sqft with 8 ft tall to get 500 lux in all corners [/INST]
+**************************************************
+18:52:19.000 [INFO    ]           u_copilot.ui.ui - cur_sources={Source(file='s___Cello-cut-sheet-Downlight-5s3p.pdf', page='4', text='Dimension:\n8.98\'\'\n9.29\'\'Architectural LED Retrofit  DownlightThe 8inch  Commercial Downlight LED are suitable for 100~277 VAC Input with fired-rated  \nJunction box, which delivers high lumens of exceptional 80+ CRI, Lifetime > 50000H with \n3000K, 4000K, 5000K ES color temperatures options .  They can replace for most manufacturers \nincandescent, CFL or H.I.D.  fixtures with apertures of 7.72″min .to 8.26" max diameter, Easy \nconversion  \nmethod and installation can be performed from below the ceiling without removing \nexisting  fixture.      \n'), Source(file='s___Cello-cut-sheet-Downlight-5s3p.pdf', page='3', text='DESCRIPTION \nDimension:\nORDER INFORMATIONPERFORMANCE SUMMARY LED Commercial Downlights\n  DL-DL028=8inch 15W=15W  35=3500K\n40=4000K\n50=5000KCategory Size Wattage CCT(XX)\n30=3000KEnergy Star Listed YES\nDamp Rated YESLM79 Report YESEfficacy\nRated Power\nDelivered light output\nInput Current\nInput Voltage\nCRI\nCCT Options\nTHD\nPF\nStandard Warranty\nStandard Lifetime\nMounting\nTemperature Rating  80LPW\n9W\n720lm \n0.1A\n Model\n100-277V AC\nRa>80\n3000K, 3500K, 4000K, 5000K\n<20%\n>0.9\n5 Years\nDesigned minimum 50,000 hours\nRecessed\nDesigned to operate in temperatures 45°C\nand below room side and plenum side.   85LPW\n15W\n1275lm\n0.2A88LPW\n20W\n1760lm\n0.25A\nUL Listed YES YES /\n9W=9W  \n20W=20W  6.02"\n9.21\'\'\nThe split LED Commercial Downlight series have been optimized to the third generation.  The \ninnovative separable design of junction box and housing makes it more flexible, With 75 º  beam \nangle , the 8" split commercial downlight can fulfill a wide range of lighting needs .  Easy-fit\n installation comes from adjustable spring-action housing clips.  It is designed and engineered for  \nrecessed applications, which is suitable for commercial and public places and elegantly decorates \nthe ambience, such as shopping mall, hospital, airport, hotel lobby, etc.    ')}
+18:52:19.021 [INFO    ]            uvicorn.access - 127.0.0.1:58524 - "POST /run/predict HTTP/1.1" 200
+18:52:49.203 [INFO    ]            uvicorn.access - 127.0.0.1:58547 - "POST /run/predict HTTP/1.1" 200
+18:52:49.205 [INFO    ]            uvicorn.access - 127.0.0.1:58548 - "POST /run/predict HTTP/1.1" 200
+18:52:49.210 [INFO    ]            uvicorn.access - 127.0.0.1:58548 - "POST /run/predict HTTP/1.1" 200
+18:52:49.214 [INFO    ]            uvicorn.access - 127.0.0.1:58548 - "POST /queue/join HTTP/1.1" 200
+18:52:49.217 [INFO    ]            uvicorn.access - 127.0.0.1:58548 - "GET /queue/data?session_hash=2ahh9ivtf8r HTTP/1.1" 200
+18:52:49.258 [INFO    ]           u_copilot.ui.ui - NEW MESSAGE **** =user: let's use any indoor lights with lumen output specifications to do this project, type of new_message =<class 'llama_index.llms.base.ChatMessage'>
+18:52:49.259 [INFO    ]           u_copilot.ui.ui - **** all_messsages = ["user: how to construct a lighting system for a classroom of 1000 sqft", "assistant:  Based on the context provided, it does not contain sufficient information to help construct a lighting system for a 1000 sqft classroom. The context focuses on the specifications of an 8.98'' Commercial Downlight LED and U-Copilot's capabilities in helping build lighting projects. To design a lighting system for a classroom, you would need to consider factors such as the number and placement of fixtures, the type and number of lumens required, and the desired color temperature, among other things. It's recommended to consult with a lighting designer or professional for a proper design tailored to your specific needs.", "user: ok, tell me how many downlights are needed to illuminate a room of 1000 sqft with 8 ft tall to get 500 lux in all corners", "assistant:  To determine the number of downlights required to achieve 500 lux in all corners of a 1000 sqft classroom with an 8 ft ceiling height, we need to calculate the total lumens required and then determine how many downlights with their specific lumen output can provide that amount.\n\nFirst, let's calculate the total lumens required:\n\n1. Determine the foot-candle (fc) requirement: 500 lux = 53.96 fc\n2. Convert the area from square feet to square meters: 1000 sqft = 92.903 sqm\n3. Calculate the total lumens required: Lumens = fc * Area * 10.76\n\nUsing the given formula, the total lumens required is approximately 53,960 lumens.\n\nNow, let's determine how many downlights are needed based on the provided context:\n\n1. The context does not provide enough information about the specific lumen output of the downlights.\n2. To find the number of downlights, we would need to know the lumen output of a single downlight and the distribution pattern (e.g., 75\u00ba beam angle).\n3. Without this information, it is not possible to determine the exact number of downlights required to achieve 500 lux in all corners of a 1000 sqft classroom with an 8 ft ceiling height based on the provided context.", "user: let's use any indoor lights with lumen output specifications to do this project"]
+Llama.generate: 14 prefix-match hit, remaining 452 prompt tokens to eval
+
+llama_print_timings:        load time =   20997.95 ms
+llama_print_timings:      sample time =      12.62 ms /   434 runs   (    0.03 ms per token, 34381.68 tokens per second)
+llama_print_timings: prompt eval time =    2348.44 ms /   452 tokens (    5.20 ms per token,   192.47 tokens per second)
+llama_print_timings:        eval time =   18319.38 ms /   433 runs   (   42.31 ms per token,    23.64 tokens per second)
+llama_print_timings:       total time =   56598.57 ms /   885 tokens
+** Completion: **
+ To determine the number of downlights required to achieve 500 lux in all corners of a 1000 sqft classroom with an 8 ft ceiling height, we need to calculate the total lumens required and then determine how many downlights with their specific lumen output can provide that amount.
+
+First, let's calculate the total lumens required:
+
+1. Determine the foot-candle (fc) requirement: 500 lux = 53.96 fc
+2. Convert the area from square feet to square meters: 1000 sqft = 92.903 sqm
+3. Calculate the total lumens required: Lumens = fc * Area * 10.76
+
+Using the given formula, the total lumens required is approximately 53,960 lumens.
+
+Now, let's determine how many downlights are needed based on the provided context:
+
+1. The context does not provide enough information about the specific lumen output of the downlights.
+2. To find the number of downlights, we would need to know the lumen output of a single downlight and the distribution pattern (e.g., 75º beam angle).
+3. Without this information, it is not possible to determine the exact number of downlights required to achieve 500 lux in all corners of a 1000 sqft classroom with an 8 ft ceiling height based on the provided context.
+**************************************************
+
+
+** Messages: **
+system: Context information is below.
+--------------------
+DESCRIPTION 
+Dimension:
+ORDER INFORMATIONPERFORMANCE SUMMARY LED Commercial Downlights
+  DL-DL028=8inch 15W=15W  35=3500K
+40=4000K
+50=5000KCategory Size Wattage CCT(XX)
+30=3000KEnergy Star Listed YES
+Damp Rated YESLM79 Report YESEfficacy
+Rated Power
+Delivered light output
+Input Current
+Input Voltage
+CRI
+CCT Options
+THD
+PF
+Standard Warranty
+Standard Lifetime
+Mounting
+Temperature Rating  80LPW
+9W
+720lm 
+0.1A
+ Model
+100-277V AC
+Ra>80
+3000K, 3500K, 4000K, 5000K
+<20%
+>0.9
+5 Years
+Designed minimum 50,000 hours
+Recessed
+Designed to operate in temperatures 45°C
+and below room side and plenum side.   85LPW
+15W
+1275lm
+0.2A88LPW
+20W
+1760lm
+0.25A
+UL Listed YES YES /
+9W=9W  
+20W=20W  6.02"
+9.21''
+The split LED Commercial Downlight series have been optimized to the third generation.  The 
+innovative separable design of junction box and housing makes it more flexible, With 75 º  beam 
+angle , the 8" split commercial downlight can fulfill a wide range of lighting needs .  Easy-fit
+ installation comes from adjustable spring-action housing clips.  It is designed and engineered for  
+recessed applications, which is suitable for commercial and public places and elegantly decorates 
+the ambience, such as shopping mall, hospital, airport, hotel lobby, etc.
+
+Dimension:
+8.98''
+9.29''Architectural LED Retrofit  DownlightThe 8inch  Commercial Downlight LED are suitable for 100~277 VAC Input with fired-rated  
+Junction box, which delivers high lumens of exceptional 80+ CRI, Lifetime > 50000H with 
+3000K, 4000K, 5000K ES color temperatures options .  They can replace for most manufacturers 
+incandescent, CFL or H.I.D.  fixtures with apertures of 7.72″min .to 8.26" max diameter, Easy 
+conversion  
+method and installation can be performed from below the ceiling without removing 
+existing  fixture.
+--------------------
+You can only answer questions about the provided context.  If you know the answer but it is not based in the provided context, don't provide  the answer, just state the answer is not in the context provided.
+user: how to construct a lighting system for a classroom of 1000 sqft
+assistant:  Based on the context provided, it does not contain sufficient information to help construct a lighting system for a 1000 sqft classroom. The context focuses on the specifications of an 8.98'' Commercial Downlight LED and U-Copilot's capabilities in helping build lighting projects. To design a lighting system for a classroom, you would need to consider factors such as the number and placement of fixtures, the type and number of lumens required, and the desired color temperature, among other things. It's recommended to consult with a lighting designer or professional for a proper design tailored to your specific needs.
+user: ok, tell me how many downlights are needed to illuminate a room of 1000 sqft with 8 ft tall to get 500 lux in all corners
+**************************************************
+** Response: **
+assistant:  To determine the number of downlights required to achieve 500 lux in all corners of a 1000 sqft classroom with an 8 ft ceiling height, we need to calculate the total lumens required and then determine how many downlights with their specific lumen output can provide that amount.
+
+First, let's calculate the total lumens required:
+
+1. Determine the foot-candle (fc) requirement: 500 lux = 53.96 fc
+2. Convert the area from square feet to square meters: 1000 sqft = 92.903 sqm
+3. Calculate the total lumens required: Lumens = fc * Area * 10.76
+
+Using the given formula, the total lumens required is approximately 53,960 lumens.
+
+Now, let's determine how many downlights are needed based on the provided context:
+
+1. The context does not provide enough information about the specific lumen output of the downlights.
+2. To find the number of downlights, we would need to know the lumen output of a single downlight and the distribution pattern (e.g., 75º beam angle).
+3. Without this information, it is not possible to determine the exact number of downlights required to achieve 500 lux in all corners of a 1000 sqft classroom with an 8 ft ceiling height based on the provided context.
+**************************************************
+
+
+original_path_1=s/Cello-cut-sheet-Downlight-5s3p.pdf
+original_path_2=s/Cello-cut-sheet-Downlight-5s3p.pdf
+original_path_1=s/Cello-cut-sheet-Downlight-5s3p.pdf
+original_path_2=s/Cello-cut-sheet-Downlight-5s3p.pdf
+sources_text=1. <https://www.cellolighting.com/s/Cello-cut-sheet-Downlight-5s3p.pdf>
+
+
+2. <https://www.cellolighting.com/s/Cello-cut-sheet-Downlight-5s3p.pdf>
+** Prompt: **
+<s>[INST] Context information is below.
+--------------------
+technical background, operation experiences and business connections.  Cello Lighting is one of the very few start-ups, which have blended broad vision of business and in-depths innovation of technology to make a totally original and different business plans from other competitors.Cello Lighting is also the first lighting companies adopting AI GPT technology on its website (powered by U-Copilot).  It enables our lighting clients to discover insights buried in PDF, HTML and beyond in seconds.
+ Indoor Luminaires
+New lights bring new lives.  From New York Stations, city halls, U.S.  navy to commercial buildings, super markets … our clients use our products anywhere.
+
+Description 
+The 10inch Commercial LED Down Lights are suitable for 100~277V with fired-
+rated Junction box, which delivers high lumens of exceptional 80 /90+ CRI,  
+Lifetime > 50000H  with 3000K, 4000K, 5000K  color temperatures options. 
+ This 10inch Commercial LED Down Lighting can replace for most manufacturers 
+incandescent, CFL or H.I.D.  fixtures with apertures of 10.1" min.to 10.7" max 
+diameter.
+--------------------
+You can only answer questions about the provided context.  If you know the answer but it is not based in the provided context, don't provide  the answer, just state the answer is not in the context provided. [/INST]</s>[INST] how to construct a lighting system for a classroom of 1000 sqft [/INST]</s>[INST] ok, tell me how many downlights are needed to illuminate a room of 1000 sqft with 8 ft tall to get 500 lux in all corners [/INST]</s>[INST] let's use any indoor lights with lumen output specifications to do this project [/INST]
+**************************************************
+18:53:46.076 [INFO    ]           u_copilot.ui.ui - cur_sources={Source(file='s___Cello-cut-sheet-Downlight-5s3p.pdf', page='5', text='Description \nThe 10inch Commercial LED Down Lights are suitable for 100~277V with fired-\nrated Junction box, which delivers high lumens of exceptional 80 /90+ CRI,  \nLifetime > 50000H  with 3000K, 4000K, 5000K  color temperatures options. \n This 10inch Commercial LED Down Lighting can replace for most manufacturers \nincandescent, CFL or H.I.D.  fixtures with apertures of 10.1" min.to 10.7" max \ndiameter. '), Source(file='index.html', page='-', text='technical background, operation experiences and business connections.  Cello Lighting is one of the very few start-ups, which have blended broad vision of business and in-depths innovation of technology to make a totally original and different business plans from other competitors.Cello Lighting is also the first lighting companies adopting AI GPT technology on its website (powered by U-Copilot).  It enables our lighting clients to discover insights buried in PDF, HTML and beyond in seconds.\n Indoor Luminaires\nNew lights bring new lives.  From New York Stations, city halls, U.S.  navy to commercial buildings, super markets … our clients use our products anywhere.\n')}
+18:53:46.088 [INFO    ]            uvicorn.access - 127.0.0.1:58548 - "POST /run/predict HTTP/1.1" 200
+18:53:49.551 [INFO    ]            uvicorn.access - 127.0.0.1:58571 - "GET / HTTP/1.1" 200
+18:53:49.574 [INFO    ]            uvicorn.access - 127.0.0.1:58571 - "GET /info HTTP/1.1" 200
+18:53:49.576 [INFO    ]            uvicorn.access - 127.0.0.1:58575 - "GET /favicon.ico HTTP/1.1" 200
+18:53:49.581 [INFO    ]            uvicorn.access - 127.0.0.1:58575 - "GET /theme.css HTTP/1.1" 200
+18:53:49.652 [INFO    ]            uvicorn.access - 127.0.0.1:58575 - "POST /run/predict HTTP/1.1" 200
+18:53:49.678 [INFO    ]            uvicorn.access - 127.0.0.1:58575 - "POST /queue/join HTTP/1.1" 200
+18:53:49.681 [INFO    ]            uvicorn.access - 127.0.0.1:58575 - "GET /queue/data?session_hash=foj0jtwpgmr HTTP/1.1" 200

@@ -1,3 +1,6 @@
+
+wget --no-check-certificate "https://drive.google.com/file/d/1R8NGaXsKs-6YU8jd2Fe1mti2BXWhXFmK/view?usp=sharing" -D .
+
 #install psql:
 
 brew install postgresql

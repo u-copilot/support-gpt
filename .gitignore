@@ -5,6 +5,7 @@ venv
 local_data/
 cleansed_website/
 website/
+models/
 
 settings-me.yaml
 
