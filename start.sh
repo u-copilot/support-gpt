@@ -1,5 +1,4 @@
-
-#!/bin/bash
+##!/bin/bash
 
 # Define the model directory
 MODEL_DIR="models"
@@ -11,7 +10,7 @@ if [ ! -d "$MODEL_DIR" ] || [ -z "$(ls -A "$MODEL_DIR")" ]; then
     echo "Directory '$MODEL_DIR' does not exist or is empty. Downloading and extracting models..."
     
     # Download the file
-    wget --no-check-certificate "https://docs.google.com/uc?export=download&id=1R8NGaXsKs-6YU8jd2Fe1mti2BXWhXFmK" -O models.tar.gz
+    gdown "https://drive.google.com/uc?id=1R8NGaXsKs-6YU8jd2Fe1mti2BXWhXFmK" -O models.tar.gz
     
     # Extract the file
     tar -xzvf models.tar.gz
@@ -25,13 +24,15 @@ else
 fi
 
 
-python -m venv ../venv
-source ../venv/bin/activate
+python -m venv venv
+source venv/bin/activate
 
+cd support-gpt
 
+pip install -r requirements.txt -e .
 
 export BASE_URL='www.cellolighting.com'
-export PORT=50100
+export PORT=50101
 export SCHOOL_NAME='Cello Lighting'
 mkdir local_data
 ./tools/init_web_d4.sh $BASE_URL $PORT
