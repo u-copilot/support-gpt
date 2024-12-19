@@ -325,11 +325,11 @@ class UCopilotUi:
                     )
 
                 with gr.Column(scale=7, elem_id="col"):
-                    SCHOOL_NAME = os.getenv("SCHOOL_NAME", "Palo Alto High School")
+                    ORGANIZATION_NAME = os.getenv("ORGANIZATION_NAME", "Palo Alto High School")
                     _ = gr.ChatInterface(
                         self._chat,
                         chatbot=gr.Chatbot(
-                            label=f"{SCHOOL_NAME}",
+                            label=f"{ORGANIZATION_NAME}",
                             show_copy_button=True,
                             elem_id="chatbot",
                             render=False,

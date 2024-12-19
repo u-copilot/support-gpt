@@ -1,6 +1,10 @@
 ##!/bin/bash
 
-# Define the model directory
+export BASE_URL='www.cellolighting.com'
+export PORT=50101
+export ORGANIZATION_NAME='Cello Lighting'
+
+#-----------------------------------------------------
 MODEL_DIR="models"
 
 cd ..
@@ -31,9 +35,6 @@ cd support-gpt
 
 pip install -r requirements.txt -e .
 
-export BASE_URL='www.cellolighting.com'
-export PORT=50101
-export SCHOOL_NAME='Cello Lighting'
 mkdir local_data
 ./tools/init_web_d4.sh $BASE_URL $PORT
 python ./tools/cleansing_data.py
