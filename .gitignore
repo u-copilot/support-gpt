@@ -6,6 +6,7 @@ local_data/
 cleansed_website/
 website/
 models/
+nohup.out
 
 settings-me.yaml
 
