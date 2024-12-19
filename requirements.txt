@@ -9,7 +9,7 @@ annotated-types==0.7.0
 anyio==3.7.1
 attrs==24.2.0
 Automat==24.8.1
-beautifulsoup4==4.12.3
+beautifulsoup4>=4.9.0
 black==22.12.0
 blinker==1.7.0
 boto3==1.35.53

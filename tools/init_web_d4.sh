@@ -17,13 +17,13 @@ wget --recursive --level=4 --no-clobber --page-requisites --html-extension --con
 
 rm -R website
 rm -R cleansed_website
-rm -R localdata/private_gpt
+rm -R local_data/private_gpt
 
 # Move the downloaded website to a specific directory
 mv "$domain" website
 
 # Run a Python script for data cleansing
-python tools/cleansing_data.py
+#python tools/cleansing_data.py
 
 #poetry install --with ui,local
 #poetry run python scripts/setup
